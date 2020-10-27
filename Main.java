@@ -1,33 +1,27 @@
+import java.io.*;
 import java.util.*;
-import java.lang.Math;  
-  public class Main{
-  
-  public static void main(String[] args) {
-      Scanner scn = new Scanner(System.in);
-      int b = scn.nextInt();
-      int n1 = scn.nextInt();
-      int n2 = scn.nextInt();
-  
-      int d = getSum(b, n1, n2);
-      System.out.println(d);
-   }
-  
-   public static int getSum(int b, int n1, int n2){
-       int ans=0;
-       int c=0;
-       int i=0;
-       while(n1>0 || n2>0 || c>0){
-           int rem1 = n1%10;
-           int rem2 = n2%10;
-           n1/=10;
-           n2/=10;
-           
-           int sum = rem1+rem2+c;
-           c = sum/b;
-           sum = sum%b;
-           ans+= sum*(Math.pow(10,i));
-           i++;
-       }
-       return ans;
-   }
-  }
+
+public class Main{
+
+public static void main(String[] args) throws Exception {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int[] arr = new int[n];
+    for(int i=0;i<arr.length;i++){
+        arr[i] = sc.nextInt();
+    }
+    int max=arr[0];
+    int min=arr[0];
+    for(int j=0;j<arr.length-1;j++){
+        
+        if(arr[j+1]>max){
+            max = arr[j+1];
+        }else if(arr[j+1]<min){
+            min = arr[j+1];
+        }
+    }
+    int result = max-min;
+    System.out.println(result);
+ }
+
+}
