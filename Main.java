@@ -4,14 +4,15 @@ public class Main{
 
 public static void main(String[] args) {
   Scanner sc = new Scanner(System.in);
-  String a = sc.next();
-  StringBuilder r = new StringBuilder();
-  r.append(a);
-  StringBuilder m = r.reverse();
-  if(m.toString().equals(a)){
-    System.out.println("yes");
-  }else{
-    System.out.println("noya");
+  int a=0,b=0,c=1;
+  int x = sc.nextInt();
+  for(int i=0;i<x;i++){
+    a=b;
+    b=c;
+    c=a+b;
+    System.out.print(a+",");
+
+
   }
  }
 
