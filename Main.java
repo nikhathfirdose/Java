@@ -4,15 +4,16 @@ public class Main{
 
 public static void main(String[] args) {
   Scanner sc = new Scanner(System.in);
-  int a=0,b=0,c=1;
-  int x = sc.nextInt();
-  for(int i=0;i<x;i++){
-    a=b;
-    b=c;
-    c=a+b;
-    System.out.print(a+",");
-
-
+  String s = sc.nextLine();
+  int count=0;
+  for(int i=0;i<s.length();i++){
+    for(int j=i+1;j<s.length();j++){
+      if(s.charAt(i) == (s.charAt(j))){
+        count++;
+        System.out.println(s.charAt(i));
+        System.out.println(count);
+      }
+    }
   }
  }
 
