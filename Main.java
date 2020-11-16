@@ -5,21 +5,18 @@ import java.util.*;
 public class Main{
 
 public static void main(String[] args) {
-  Scanner sc = new Scanner(System.in);
-  int a = sc.nextInt();
-  String num = Integer.toString(a);
-  StringBuilder sb = new StringBuilder();
-  sb.append(num);
-  StringBuilder rev =  sb.reverse();
-  if(rev.toString().equals(num)){
-    System.out.println("yes");
-  }else{
-    System.out.println("no");
+  // Scanner sc = new Scanner(System.in);
+
+  String a = "aaa hhh sdhfk";
+  String arr[]= a.split(" ");
+  String res[] = new String[7];
+  // System.out.println(arr.length);
+  for(int i=0;i<arr.length;i++){
+    res[i] = (arr[i].toString().substring(0,1).toUpperCase())+ arr[i].substring(1);
   }
-  
+    for(int i=0;i<arr.length;i++){
+    System.out.print(res[i]+" ");
+  }
 
- 
-
- }
-
+}
 }
