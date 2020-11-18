@@ -5,18 +5,41 @@ import java.util.*;
 public class Main{
 
 public static void main(String[] args) {
-  // Scanner sc = new Scanner(System.in);
+ Scanner sc = new Scanner(System.in);
+ while(true){
+ System.out.println("Product:");
+ String prod = sc.nextLine();
+ int dis=0;
+ if(prod.toLowerCase().equals("m")){
+   dis = 10;
+ }
+ else if(prod.toLowerCase().equals("n")){
+   dis = 20;
+ }
+ else if(prod.toLowerCase().equals("o")){
+   dis = 30;
+ }
+ else if(prod.toLowerCase().equals("p")){
+   dis = 40;
+ }
+ else{
+ System.out.println("Invalid");
+ break;
+   
+ }
+ System.out.println("Price:");
 
-  String a = "aaa hhh sdhfk";
-  String arr[]= a.split(" ");
-  String res[] = new String[7];
-  // System.out.println(arr.length);
-  for(int i=0;i<arr.length;i++){
-    res[i] = (arr[i].toString().substring(0,1).toUpperCase())+ arr[i].substring(1);
-  }
-    for(int i=0;i<arr.length;i++){
-    System.out.print(res[i]+" ");
-  }
+ int price = sc.nextInt();
 
+ if(price<100){
+ System.out.println("Invalid again");
+ break;
+
+ }
+
+ System.out.println(prod+price);
+ break;
+
+ }
 }
 }
