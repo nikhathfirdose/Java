@@ -6,40 +6,53 @@ public class Main{
 
 public static void main(String[] args) {
  Scanner sc = new Scanner(System.in);
- while(true){
- System.out.println("Product:");
- String prod = sc.nextLine();
- int dis=0;
- if(prod.toLowerCase().equals("m")){
-   dis = 10;
- }
- else if(prod.toLowerCase().equals("n")){
-   dis = 20;
- }
- else if(prod.toLowerCase().equals("o")){
-   dis = 30;
- }
- else if(prod.toLowerCase().equals("p")){
-   dis = 40;
- }
- else{
- System.out.println("Invalid");
- break;
-   
- }
- System.out.println("Price:");
+  while(true){
+  System.out.println("Size:");
+  int size = sc.nextInt();
 
- int price = sc.nextInt();
+  if(size<0){
+   System.out.println("Invalid");
+  break;
 
- if(price<100){
- System.out.println("Invalid again");
- break;
+  }
+  int[] arr = new int[size];
+  int[] arr2 = new int[size];
+  for(int i=0;i<size;i++){
+    arr[i] = sc.nextInt();
+  }
+  for(int i=0;i<size;i++){
+    arr2[i] = sc.nextInt();
+  }
+  int sum,mul;
+for(int i=0;i<size;i++){
+  sum=0;
+  int temp1=arr[i];
+  int temp2=arr2[i];
+  while(temp1!=0){
+    sum+= temp1%10;
+    temp1/=10;
+  }
+//  System.out.println(sum);
+    mul=1;
+    while(temp2!=0){
+      mul*= temp2%10;
+      temp2/=10;
+    }
 
- }
+  if(sum==mul){
+     System.out.println(arr[i]+ ","+arr2[i]);
+  }
+  else{
+     System.out.println("no match");
+     break;
+  }
+  }
 
- System.out.println(prod+price);
- break;
+break;
+  }
+//  System.out.println(88789%10);
 
- }
+
+  
 }
 }
